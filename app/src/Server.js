@@ -542,8 +542,12 @@ function startServer() {
 
         // Apply the authentication middleware using dynamic baseURL configuration
         app.use((req, res, next) => {
+
             const host = req.headers.host;
+            //previous
             const protocol = req.protocol === 'https' ? 'https' : 'http';
+            //present
+            // const protocol = req.protocol === 'http' ? 'http' : 'http';
             const dynamicOIDCConfig = getDynamicConfig(host, protocol);
             try {
                 auth(dynamicOIDCConfig)(req, res, next);
