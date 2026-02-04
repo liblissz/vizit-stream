@@ -12,7 +12,7 @@ npm-debug.log
 .cache
 
 # personal
-.env
+
 
 
 docker-push.sh
